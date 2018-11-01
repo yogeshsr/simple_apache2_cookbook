@@ -1,0 +1,11 @@
+{
+  "id": "postgres",
+  "run_list": ["recipe[customer::app]"],
+  "chef_environment": "development",
+  "tags": ["team:myteam", "internal:true"],
+  "automatic": {
+    "ipaddress": "127.0.0.1",
+    "hostname": "localhost",
+    "customer_node_attribute_1": "value_1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "development",
+
+  "environment_variables": {
+    "app": "sample_service",
+    "database": "sample_service_dev",
+    "db_user": "dev_user"
+  }
+}

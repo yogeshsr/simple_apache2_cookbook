@@ -1,0 +1,19 @@
+{
+  "name": "development",
+  "description": "development environment file",
+  "cookbook_versions": {
+
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "apps": {
+      "environment": "development"
+    },
+    "development":{
+      "foo_url": {
+        "url": "foo.com"
+      }
+    }
+  }
+}

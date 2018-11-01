@@ -1,0 +1,35 @@
+---
+driver:
+  name: vagrant
+  network:
+    # define the port forwarding to access service from host/developer machine
+    - ["forwarded_port", {guest: 80, host: 8080}]
+
+provisioner:
+  name: chef_zero
+  # path to json files that will define the environments, databags and other nodes
+  environments_path: test/integration/environments
+  data_bags_path: test/integration/data_bags
+  nodes_path: test/integration/nodes
+  client_rb:
+    environment: development
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[simple_apache2_cookbook::default]
+      - recipe[simple_apache2_cookbook::sample]
+    # current node attributes accessible as node['foo']
+    attributes:
+      foo: bar
+      tags:
+        - tag_1:value_1
+    verifier:
+      inspec_tests:
+        - test/integration/default
