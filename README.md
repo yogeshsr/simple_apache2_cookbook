@@ -1,5 +1,7 @@
 # simple_apache2_cookbook
 
+Used by https://medium.com/@yogeshsr/verifying-chief-cookbook-recipe-with-test-kitchen-eec65f3cd218
+
 Below command were used to create this cookbook
 
 ```chef generate cookbook simple_apache2_cookbook1
